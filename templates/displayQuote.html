@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    
+    <h1>
+        Name: {{ quote.name }}
+    </h1>
+    <h1>
+        Symbol: {{ quote.symbol }}
+    </h1>
+    <h1>
+        Price: {{ quote.price | usd }}
+    </h1>
+{% endblock %}

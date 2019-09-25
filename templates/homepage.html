@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for i in portfolio%}
+                <tr>
+                    <td>{{ i.symbol }}</td>
+                    <td>{{ i.totalShares }}</td>
+                    <td>{{ i.price | usd}}</td>
+                    <td>{{(i.price * i.totalShares)}}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td> Current Balance: </td>
+                <td> {{ userCash | usd }} </td>
+            </tr>
+        </tbody>
+    
+    
+{% endblock %}
